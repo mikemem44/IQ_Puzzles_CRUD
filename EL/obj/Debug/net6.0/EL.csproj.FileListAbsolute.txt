@@ -1,0 +1,14 @@
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\bin\Debug\net6.0\EL.deps.json
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\bin\Debug\net6.0\EL.runtimeconfig.json
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\bin\Debug\net6.0\EL.dll
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\bin\Debug\net6.0\EL.pdb
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.csproj.AssemblyReference.cache
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.AssemblyInfoInputs.cache
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.AssemblyInfo.cs
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.csproj.CoreCompileInputs.cache
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.dll
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\refint\EL.dll
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.pdb
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\EL.genruntimeconfig.cache
+C:\Users\mikel\source\repos\IQ_Puzzles_CRUD\EL\obj\Debug\net6.0\ref\EL.dll
