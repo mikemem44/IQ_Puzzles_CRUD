@@ -18,6 +18,7 @@ namespace DAL
                 bd.Clientes.Add(Entidad);
                 bd.SaveChanges();
                 return Entidad;
+                //edit this line
             }
         }
 
