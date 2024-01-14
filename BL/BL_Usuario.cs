@@ -50,10 +50,10 @@ namespace BL
             return DAL_Usuario.getUserIDSiLoginValido(username);
         }
 
-        /*public static short getPermisoID(short Id_Usuario)
+        public static short getPermisoID(short Id_Usuario)
         {
             return DAL_Usuario.getPermisoID(Id_Usuario);
-        }*/
+        }
 
         public static bool verificarUsuarioBloqueado(Usuario Entidad)
         {

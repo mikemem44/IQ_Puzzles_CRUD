@@ -131,7 +131,7 @@ namespace IQ_Puzzles_CRUD
                     {
                         ID_Rol = 1;
                     }
-                    //user.PermisoID = 1;
+                    user.PermisoID = 1;
                     user.Nombre = txtNombre.Text;
                     user.Username = txtUsuario.Text;
                     user.Correo = txtCorreo.Text;
