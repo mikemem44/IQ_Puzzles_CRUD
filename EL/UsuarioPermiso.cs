@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace EL
 {
-    public class Permiso
+    public class UsuarioPermiso
     {
         public short ID { get; set; }
-        public string nombrePermiso { get; set; } = null!;
+        public short UsuarioID { get; set; }
+        public short PermisoID { get; set; }
         public bool Activo { get; set; }
         public short? usuarioRegistro { get; set; }
         public DateTime? fechaRegistro { get; set; }
         public short? usuarioActualiza { get; set; }
         public DateTime? fechaActualizacion { get; set; }
 
-        public List<UsuarioPermiso> UsuarioPermisos { get; } = new();
-        public List<Usuario> Usuarios { get; } = new();
-
-        //public ICollection<Usuario> Usuarios { get; } = new List<Usuario>();
     }
 }

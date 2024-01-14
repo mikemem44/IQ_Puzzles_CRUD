@@ -100,7 +100,7 @@ namespace IQ_Puzzles_CRUD
             user.ID = Convert.ToInt16(gridUsuarios.CurrentRow.Cells["ID"].Value.ToString());
             user.Nombre = txtNombre.Text;
             user.Username = txtUsuario.Text;
-            user.PermisoID = Convert.ToInt16(comboboxPermisos.SelectedValue);
+            //user.PermisoID = Convert.ToInt16(comboboxPermisos.SelectedValue);
             user.Correo = txtCorreo.Text;
             user.Contrasena = BL_Usuario.Sha256(txtContrasena.Text);
             user.usuarioActualiza = ID_Usuario;
