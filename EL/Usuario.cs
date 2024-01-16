@@ -26,6 +26,9 @@ namespace EL
         public ICollection<Factura> Facturas { get; } = new List<Factura>();
         public List<RolUsuario> RolUsuarios { get; } = new();
         public List<Rol> Roles { get; } = new();
-        public Permiso Permiso { get; set; } = null!;
+        public List<UsuarioPermiso> UsuarioPermisos { get;  } = new();
+        public List<Permiso> Permisos { get; } = new();
+
+        //public Permiso Permiso { get; set; } = null!;
     }
 }

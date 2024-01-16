@@ -16,6 +16,8 @@ namespace EL
         public short? usuarioActualiza { get; set; }
         public DateTime? fechaActualizacion { get; set; }
 
-        public ICollection<Usuario> Usuarios { get; } = new List<Usuario>();
+        public List<UsuarioPermiso> UsuarioPermisos { get; } = new();
+        public List<Usuario> Usuarios { get; } = new();
+        //public ICollection<Usuario> Usuarios { get; } = new List<Usuario>();
     }
 }

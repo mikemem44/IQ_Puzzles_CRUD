@@ -26,6 +26,7 @@ namespace DAL
         public DbSet<Formulario> Formularios { get; set; }
         public DbSet<RolUsuario> RolUsuarios { get; set; }
         public DbSet<RolFormulario> RolFormularios { get; set; }
+        public DbSet<UsuarioPermiso> UsuarioPermsisos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,6 +43,7 @@ namespace DAL
             modelBuilder.Entity<Formulario>().ToTable("Formulario");
             modelBuilder.Entity<RolUsuario>().ToTable("RolUsuario");
             modelBuilder.Entity<RolFormulario>().ToTable("RolFormulario");
+            modelBuilder.Entity<UsuarioPermiso>().ToTable("UsuarioPermiso");
 
 
             modelBuilder.Entity<Rol>()
@@ -53,6 +55,11 @@ namespace DAL
                 .HasMany(e =>e.Formularios)
                 .WithMany(e =>e.Roles)
                 .UsingEntity<RolFormulario>();
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.Permisos)
+                .WithMany(e => e.Usuarios)
+                .UsingEntity<UsuarioPermiso>();
 
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.Bloqueado)
