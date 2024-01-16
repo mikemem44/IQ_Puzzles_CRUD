@@ -30,7 +30,6 @@ namespace DAL
                 var Registro = bd.Usuarios.Find(Entidad.ID);
                 if (Registro != null)
                 {
-                    Registro.PermisoID = Entidad.PermisoID;
                     Registro.Nombre = Entidad.Nombre;
                     Registro.Username = Entidad.Username;
                     Registro.Contrasena = Entidad.Contrasena;
@@ -132,7 +131,7 @@ namespace DAL
             }
         }
 
-        public static short getPermisoID(short Id_Usuario)
+        /*public static short getPermisoID(short Id_Usuario)
         {
             using (IqPuzzlesContext bd = new IqPuzzlesContext())
             {
@@ -147,7 +146,7 @@ namespace DAL
                     return -1;
                 }
             }
-        }
+        }*/
 
         public static bool verificarUsuarioBloqueado(Usuario Entidad)
         {

@@ -72,16 +72,6 @@ namespace IQ_Puzzles_CRUD
                                 MessageBoxButtons btn = MessageBoxButtons.OK;
                                 MessageBox.Show(text, caption, btn, MessageBoxIcon.Warning);
                             }
-                            else
-                            {
-                                ID_Permiso = BL_Usuario.getPermisoID(user.ID);
-                                menuPrincipal mainMenu = new menuPrincipal();
-                                mainMenu.ID_Usuario = user.ID;
-                                mainMenu.ID_Permiso = ID_Permiso;
-                                mainMenu.ID_Rol = ID_Rol;
-                                mainMenu.Show();
-                                this.Hide();
-                            }
                         }
 
 
