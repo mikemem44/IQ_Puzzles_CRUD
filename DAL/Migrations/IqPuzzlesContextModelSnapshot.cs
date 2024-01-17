@@ -481,9 +481,6 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<short>("PermisoID")
-                        .HasColumnType("smallint");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -502,9 +499,45 @@ namespace DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.ToTable("Usuario", (string)null);
+                });
+
+            modelBuilder.Entity("EL.UsuarioPermiso", b =>
+                {
+                    b.Property<short>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("smallint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<short>("ID"), 1L, 1);
+
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
+
+                    b.Property<short>("PermisoID")
+                        .HasColumnType("smallint");
+
+                    b.Property<short>("UsuarioID")
+                        .HasColumnType("smallint");
+
+                    b.Property<DateTime?>("fechaActualizacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("fechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<short?>("usuarioActualiza")
+                        .HasColumnType("smallint");
+
+                    b.Property<short?>("usuarioRegistro")
+                        .HasColumnType("smallint");
+
+                    b.HasKey("ID");
+
                     b.HasIndex("PermisoID");
 
-                    b.ToTable("Usuario", (string)null);
+                    b.HasIndex("UsuarioID");
+
+                    b.ToTable("UsuarioPermiso", (string)null);
                 });
 
             modelBuilder.Entity("EL.Detalle", b =>
@@ -594,15 +627,19 @@ namespace DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EL.Usuario", b =>
+            modelBuilder.Entity("EL.UsuarioPermiso", b =>
                 {
-                    b.HasOne("EL.Permiso", "Permiso")
-                        .WithMany("Usuarios")
+                    b.HasOne("EL.Permiso", null)
+                        .WithMany("UsuarioPermisos")
                         .HasForeignKey("PermisoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Permiso");
+                    b.HasOne("EL.Usuario", null)
+                        .WithMany("UsuarioPermisos")
+                        .HasForeignKey("UsuarioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EL.Cliente", b =>
@@ -632,7 +669,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("EL.Permiso", b =>
                 {
-                    b.Navigation("Usuarios");
+                    b.Navigation("UsuarioPermisos");
                 });
 
             modelBuilder.Entity("EL.Producto", b =>
@@ -652,6 +689,8 @@ namespace DAL.Migrations
                     b.Navigation("Facturas");
 
                     b.Navigation("RolUsuarios");
+
+                    b.Navigation("UsuarioPermisos");
                 });
 #pragma warning restore 612, 618
         }

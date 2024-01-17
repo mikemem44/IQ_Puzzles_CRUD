@@ -10,9 +10,9 @@ namespace BL
 {
     public static class BL_UsuarioPermiso
     {
-        public static UsuarioPermiso Insert(UsuarioPermiso Entidad)
+        public static bool Insert(short ID_Usuario)
         {
-            return DAL_UsuarioPermiso.Insert(Entidad);
+            return DAL_UsuarioPermiso.Insert(ID_Usuario);
         }
         public static short getPermisoID(short Id_Usuario)
         {

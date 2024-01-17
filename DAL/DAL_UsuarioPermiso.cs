@@ -9,27 +9,24 @@ namespace DAL
 {
     public static class DAL_UsuarioPermiso
     {
-        public static UsuarioPermiso Insert(UsuarioPermiso Entidad)
+        public static bool Insert(short ID_Usuario)
         {
             using (IqPuzzlesContext bd = new IqPuzzlesContext())
             {
                 var arrayPermisos = bd.Permisos.Where(a => a.Activo == true).ToArray();
                 foreach (var permiso in arrayPermisos)
                 {
-                    Entidad.PermisoID = permiso.ID;
-                    if (permiso.ID != 1)
+                    var nuevoUsuarioPermiso = new UsuarioPermiso
                     {
-                        Entidad.Activo = false;
-                    }
-                    else
-                    {
-                        Entidad.Activo = true;
-                    }
-                    Entidad.fechaRegistro = DateTime.Now;
-                    bd.UsuarioPermsisos.Add(Entidad);
-                    bd.SaveChanges();
+                        UsuarioID = ID_Usuario,
+                        PermisoID = permiso.ID,
+                        Activo = permiso.ID == 1,
+                        fechaRegistro = DateTime.Now
+                    };
+                    
+                    bd.UsuarioPermsisos.Add(nuevoUsuarioPermiso);
                 }
-                return Entidad;
+                return bd.SaveChanges()>0;
             }
         }
 

@@ -125,7 +125,6 @@ namespace IQ_Puzzles_CRUD
             {
                 Usuario user = new Usuario();
                 RolUsuario rolUsuario = new RolUsuario();
-                UsuarioPermiso permisoUser = new UsuarioPermiso();
                 if (validarRegistro())
                 {
                     if (ID_Rol < 1)
@@ -141,9 +140,8 @@ namespace IQ_Puzzles_CRUD
                     {
                         rolUsuario.RolID = 1;
                         rolUsuario.UsuarioID = BL_Usuario.getUserIDSiLoginValido(txtUsuario.Text);
-                        permisoUser.UsuarioID = rolUsuario.UsuarioID;
                         BL_RolUsuario.Insert(rolUsuario);
-                        BL_UsuarioPermiso.Insert(permisoUser);
+                        BL_UsuarioPermiso.Insert(rolUsuario.ID);
                         MessageBox.Show("Se ha registro el usuario con exito");
                         return;
                     }
