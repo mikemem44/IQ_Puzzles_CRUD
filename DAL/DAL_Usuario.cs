@@ -131,22 +131,6 @@ namespace DAL
             }
         }
 
-        /*public static short getPermisoID(short Id_Usuario)
-        {
-            using (IqPuzzlesContext bd = new IqPuzzlesContext())
-            {
-                var userMatch = bd.Usuarios.Where(a => a.ID == Id_Usuario).FirstOrDefault();
-
-                if (userMatch != null)
-                {
-                    return userMatch.PermisoID;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-        }*/
 
         public static bool verificarUsuarioBloqueado(Usuario Entidad)
         {
